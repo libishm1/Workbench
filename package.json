@@ -2,22 +2,47 @@
   "name": "local-agent-workbench",
   "displayName": "Local Agent Workbench",
   "description": "Runs the offline local agent workbench commands from VS Code.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "local",
   "license": "MIT",
-  "engines": { "vscode": "^1.80.0" },
-  "categories": ["Other"],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
   "main": "./extension.js",
   "activationEvents": [],
   "contributes": {
     "commands": [
-      { "command": "lawb.doctor", "title": "LAWB: Doctor (check setup)" },
-      { "command": "lawb.setup", "title": "LAWB: Setup (bundled skills)" },
-      { "command": "lawb.skillsList", "title": "LAWB: List skills" },
-      { "command": "lawb.pdfExtract", "title": "LAWB: Extract text from the active PDF" },
-      { "command": "lawb.diagramBuild", "title": "LAWB: Build diagram from the active JSON spec" },
-      { "command": "lawb.prismaCounts", "title": "LAWB: PRISMA counts from the active CSV" },
-      { "command": "lawb.loopRun", "title": "LAWB: Run error loop on the active project folder" }
+      {
+        "command": "lawb.doctor",
+        "title": "LAWB: Doctor (check setup)"
+      },
+      {
+        "command": "lawb.setup",
+        "title": "LAWB: Setup (bundled skills)"
+      },
+      {
+        "command": "lawb.skillsList",
+        "title": "LAWB: List skills"
+      },
+      {
+        "command": "lawb.pdfExtract",
+        "title": "LAWB: Extract text from the active PDF"
+      },
+      {
+        "command": "lawb.diagramBuild",
+        "title": "LAWB: Build diagram from the active JSON spec"
+      },
+      {
+        "command": "lawb.prismaCounts",
+        "title": "LAWB: PRISMA counts from the active CSV"
+      },
+      {
+        "command": "lawb.loopRun",
+        "title": "LAWB: Run error loop on the active project folder"
+      }
     ],
     "configuration": {
       "title": "Local Agent Workbench",
@@ -39,5 +64,15 @@
         }
       }
     }
-  }
+  },
+  "scripts": {
+    "test": "node --test test/cli.test.js test/challenge.test.js test/extension.test.js"
+  },
+  "files": [
+    "extension.js",
+    "lib/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
 }
